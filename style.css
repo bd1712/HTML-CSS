@@ -1,0 +1,50 @@
+body{
+    font-family: sans-serif;
+}
+
+
+.wrap{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    background-color: #bbdefb;
+    
+}
+.card{
+    width: 600px;
+    height: 445px;
+    border: 1 solid;
+    position: relative;
+    perspective:1000px;  /* */
+   
+}
+.front, .back{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 1s;
+    backface-visibility:hidden ; /*  отключение лицовой и задней стороны */
+    border-radius: 10px;
+}
+.front {
+    border: 1px solid forestgreen;
+    background-image: url(./img/front_0_big.jpg);
+}
+.back{
+    border: 1px solid forestgreen;
+    background-image: url(./img/mastercard-gold-rueckseite.gif);
+    transform:rotateY(180deg);
+}
+.card:hover .front{
+transform: rotateY(180deg);  /* face site*/
+}
+.card:hover .back{
+    transform: rotateY(360deg);  /* face site*/
+    }
